@@ -42,6 +42,6 @@ def test_delete_item():
     
 def test_mark_item_done():
     client.post("/items", json={"name": "Tarea pendiente", "description": "Debe completarse"})
-    response = client.patch("/items/2/done")
+    response = client.patch("/items/1/done")
     assert response.status_code == 200
     assert response.json()["done"] is True
